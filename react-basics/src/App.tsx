@@ -56,7 +56,7 @@ function App() {
         {
           users.map((user,key)=>{
             return (
-              <p key={key} >{user.name} {user.age}</p>
+              <UserComponent name={user.name} age={user.age} />
             )
           })
         }
@@ -81,6 +81,14 @@ const GetNameComponent = (props) =>{
       <h1>{props.email}</h1>
     </>
     
+  )
+}
+
+const UserComponent = (props) => {
+  return(
+    <div>
+      {props.name} {props.age}
+    </div>
   )
 }
 
