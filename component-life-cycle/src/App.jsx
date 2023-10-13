@@ -1,16 +1,22 @@
+
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import UserForm from './UserForm';
+import UserInfo from './UserInfo';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      
-    </>
-  )
+    const[user,setUser] = useState(null);
+    const handleUserSubmit = (userData) =>{
+      setUser(userData)
+      console.log("User submitted dta : ",userData);
+    }
+    return(
+      <>
+        <UserForm onSubmit={handleUserSubmit}/>
+        {user && <UserInfo user={user} />}
+      </>
+    )
 }
 
 export default App
