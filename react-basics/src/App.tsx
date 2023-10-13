@@ -9,6 +9,14 @@ function App() {
   const age =15;
   const isGreen = "true"
   
+
+
+  // 1 list concept
+  const names = ["vishal", "khandagale","jake","mike","dustin"];
+
+  
+
+  
   return (
     <>
       <h1>Hello {myName} react site</h1>
@@ -27,6 +35,18 @@ function App() {
         <h1 style={{color: isGreen ? "green" : "white",backgroundColor:"gold"}}>This text red color</h1>
         {isGreen && <button>This is button</button> }
       </div>
+      <div className="second-div">
+      </div>
+      <h1 style={{textAlign:"center"}}> working with List</h1>
+      {/*   // 1 list concept */}
+      <div>
+        {
+          names.map((name,key)=>{
+            return <h1 key={key} >{key}  {name}</h1>
+          })
+        }
+      </div>
+
     </>
   )
 }
