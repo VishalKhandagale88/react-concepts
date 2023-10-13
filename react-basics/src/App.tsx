@@ -30,6 +30,9 @@ function App() {
   const decreseCount = () =>{
     setCount(count-1);
   }
+  const setToZero = () =>{
+    setCount(0);
+  }
 
   const[inputValue,setInputValue]=useState("");
   const changeInputValue = (event) => {
@@ -97,6 +100,7 @@ function App() {
         <h1>{count}</h1>
         <button onClick={increaseCount} >Increase Count</button>
         <button onClick={decreseCount} >Decrese Count</button>
+        <button onClick={setToZero}>Set To Zero</button>
       </div>
       <hr />
       <input type="text" onChange={changeInputValue} />
