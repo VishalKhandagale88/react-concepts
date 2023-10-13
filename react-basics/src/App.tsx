@@ -1,5 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import "./App.css" 
+import {useState} from "react"
 
 function App() {
   
@@ -13,14 +14,23 @@ function App() {
 
   // 1 list concept
   const names = ["vishal", "khandagale","jake","mike","dustin"];
-
-
   const users = [
     {name:"vishal",age:21},
     {name:"jake",age:22},
     {name:"jessica",age:45}
   ]
   
+
+  // 2 states in React
+  const[count,setCount] = useState(0)
+  const increaseCount = () => {
+    setCount(count+1);
+  }
+
+  const decreseCount = () =>{
+    setCount(count-1);
+  }
+
   return (
     <>
       <h1>Hello {myName} react site</h1>
@@ -56,16 +66,24 @@ function App() {
         {
           users.map((user,key)=>{
             return (
-              <UserComponent name={user.name} age={user.age} />
+              <UserComponent key={key} name={user.name} age={user.age} />
             )
           })
         }
       </div>
-
+    {/* ---------------------------------------------------------------------- */}
+       {/*2 States in react  */}
+       <hr />
+      <div>
+        <h1>{count}</h1>
+        <button onClick={increaseCount} >Increase Count</button>
+        <button onClick={decreseCount} >Decrese Count</button>
+      </div>
     </>
   )
 }
 // the below one is just a simple function
+
 const getName = () =>{
   return "vishal";
 }
