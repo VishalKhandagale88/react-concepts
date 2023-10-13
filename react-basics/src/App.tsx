@@ -42,6 +42,11 @@ function App() {
     setTextValue(!showText);
   }
 
+  // changing the color of text
+  const[textColor,setTextColor] = useState("green");
+  const changeColor = () =>{
+    setTextColor("red");
+  }
 
   return (
     <>
@@ -99,6 +104,10 @@ function App() {
       <hr />
       <button onClick={displayText} >Show text / Hide text</button>
       {showText && <h1>This text will be hidden if you click  above button</h1>}
+      <hr />
+      <h1>How to set the color of text </h1>
+      <button onClick={changeColor} >Change the color of below text</button>
+      <h1 style={{color:textColor}}>The text of the color will change</h1>
     </>
   )
 }
