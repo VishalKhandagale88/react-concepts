@@ -36,6 +36,13 @@ function App() {
     console.log(event.target.value);
     setInputValue(event.target.value);
   }
+
+  const[showText,setTextValue]= useState(true);
+  const displayText = () =>{
+    setTextValue(!showText);
+  }
+
+
   return (
     <>
       <h1>Hello {myName} react site</h1>
@@ -89,6 +96,9 @@ function App() {
       <hr />
       <input type="text" onChange={changeInputValue} />
       <p>{inputValue}</p>
+      <hr />
+      <button onClick={displayText} >Show text / Hide text</button>
+      {showText && <h1>This text will be hidden if you click  above button</h1>}
     </>
   )
 }
