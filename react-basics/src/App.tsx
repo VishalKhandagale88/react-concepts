@@ -31,6 +31,11 @@ function App() {
     setCount(count-1);
   }
 
+  const[inputValue,setInputValue]=useState("");
+  const changeInputValue = (event) => {
+    console.log(event.target.value);
+    setInputValue(event.target.value);
+  }
   return (
     <>
       <h1>Hello {myName} react site</h1>
@@ -73,12 +78,17 @@ function App() {
       </div>
     {/* ---------------------------------------------------------------------- */}
        {/*2 States in react  */}
-       <hr />
+       
+       <div className="second-div">
+      </div>
       <div>
         <h1>{count}</h1>
         <button onClick={increaseCount} >Increase Count</button>
         <button onClick={decreseCount} >Decrese Count</button>
       </div>
+      <hr />
+      <input type="text" onChange={changeInputValue} />
+      <p>{inputValue}</p>
     </>
   )
 }
