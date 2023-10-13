@@ -12,6 +12,10 @@ function App() {
       {appName}
       {appName}
       <GetNameComponent username="vishal" age={23} email="vishal@gmail.com" />
+      <hr></hr>
+      <Job salary={20000} position="SDE" company="Google" />
+      <Job salary={10000} position="full-stack-developer" company="Amazon" />
+      <Job salary={20022} position = "consultant" company="Instgram" />
     </>
   )
 }
@@ -31,6 +35,14 @@ const GetNameComponent = (props) =>{
       <h1>{props.email}</h1>
     </>
     
+  )
+}
+
+const Job = (props) =>{
+  return(
+    <>
+      <p>{props.salary} {props.position} {props.company} </p>
+    </>
   )
 }
 
