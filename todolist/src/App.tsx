@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 import './App.css'
 
 function App() {
   const[todolist,setToDoList] = useState([]);
   const[inputValue,setInputValue] = useState("");
-  const changeInput = (event)=>{
+  const changeInput = (event: { target: { value: SetStateAction<string>; }; })=>{
     setInputValue(event.target.value);
   }
   const addTask = () =>{
-    let task = {
+    const task = {
       id: todolist.length===0 ? 1 : todolist[todolist.length-1].id + 1,
       taskName: inputValue,
     }
