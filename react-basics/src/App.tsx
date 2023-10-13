@@ -11,6 +11,7 @@ function App() {
       <h1>Hello {myName} react site</h1>
       {appName}
       {appName}
+      <GetNameComponent username="vishal" age={23} email="vishal@gmail.com" />
     </>
   )
 }
@@ -22,9 +23,14 @@ const getName = () =>{
 // below one is a react component which returns a jsx 
 // components always having namig convention which is PascalCase
 // in components we always return some ui
-const GetNameComponent = () =>{
+const GetNameComponent = (props) =>{
   return(
-    <h1>getNameComponent</h1>
+    <>
+      <h1>{props.username}</h1>
+      <h1>{props.age}</h1>
+      <h1>{props.email}</h1>
+    </>
+    
   )
 }
 
