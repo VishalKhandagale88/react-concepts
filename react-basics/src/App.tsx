@@ -14,8 +14,12 @@ function App() {
   // 1 list concept
   const names = ["vishal", "khandagale","jake","mike","dustin"];
 
-  
 
+  const users = [
+    {name:"vishal",age:21},
+    {name:"jake",age:22},
+    {name:"jessica",age:45}
+  ]
   
   return (
     <>
@@ -43,6 +47,17 @@ function App() {
         {
           names.map((name,key)=>{
             return <h1 key={key} >{key}  {name}</h1>
+          })
+        }
+      </div>
+      <hr />
+      <div>
+        <h3>This is an object consists all the values</h3>
+        {
+          users.map((user,key)=>{
+            return (
+              <p key={key} >{user.name} {user.age}</p>
+            )
           })
         }
       </div>
