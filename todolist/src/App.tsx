@@ -5,7 +5,10 @@ function App() {
 
   return (
     <>
-      <h1>app is working</h1>
+     <div className='App'>
+      <div className='addTask'></div>
+      <div className='list'></div>
+     </div>
     </>
   )
 }
