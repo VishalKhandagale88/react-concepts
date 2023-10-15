@@ -6,7 +6,7 @@ import UserInfo from './UserInfo';
 
 
 function App() {
-    const[user,setUser] = useState(null);
+    const[users,setUser] = useState([]);
     const handleUserSubmit = (userData) =>{
       setUser(userData)
       console.log("User submitted dta : ",userData);
@@ -14,7 +14,7 @@ function App() {
     return(
       <>
         <UserForm onSubmit={handleUserSubmit}/>
-        {user && <UserInfo user={user} />}
+       {users && < UserInfo user={users}/> }
       </>
     )
 }
