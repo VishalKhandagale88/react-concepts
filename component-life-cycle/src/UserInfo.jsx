@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 
 
+// eslint-disable-next-line react/prop-types
 function UserInfo({user}) {
   return (
     <div>
